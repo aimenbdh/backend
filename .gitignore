@@ -1,0 +1,16 @@
+target/
+.idea/
+*.iml
+.vscode/
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.env
+logs/
+Database/
+*.rar
+diag.bat
+git-push.bat
