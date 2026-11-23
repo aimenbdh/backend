@@ -61,6 +61,18 @@ app = FastAPI(
 
 app.include_router(notification.router)
 
+
+# ---- Health & info (lus par Eureka) ----
+@app.get("/health", tags=["Monitoring"], summary="Health check")
+def health():
+    return {"status": "UP"}
+
+
+@app.get("/info", tags=["Monitoring"], summary="Service info")
+def info():
+    return {"app": {"name": "notification", "version": app.version,
+                    "description": "Microservice de gestion des notifications"}}
+
 # TODO (students): if you add other routers, include them here.
 
 

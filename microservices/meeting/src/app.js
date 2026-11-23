@@ -14,6 +14,11 @@ app.use('/swagger-ui', swaggerUi.serve, swaggerUi.setup(openapiSpec));
 // ---- API routes ----
 app.use('/api/meetings', meetingRoutes);
 
+// ---- Health & info (lus par Eureka) ----
+const { name, version, description } = require('../package.json');
+app.get('/health', (req, res) => res.status(200).json({ status: 'UP' }));
+app.get('/info', (req, res) => res.status(200).json({ app: { name, version, description } }));
+
 // ---- 404 for unknown routes ----
 app.use((req, res) => {
   res.status(404).json({ status: 404, error: 'Not Found', message: `Route ${req.method} ${req.originalUrl} not found` });

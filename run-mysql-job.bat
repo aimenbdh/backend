@@ -17,6 +17,6 @@ if errorlevel 1 (
 )
 C:\xampp\mysql\bin\mysql.exe -u root -e "show databases"
 ) > "%~dp0logs\mysql.log" 2>&1
-timeout /t 60 /nobreak >nul
+timeout /t 15 /nobreak >nul
 netstat -ano | find ":8082 " | find "LISTENING" >nul
 if errorlevel 1 start "job" /min cmd /c "%~dp0run-job.bat"

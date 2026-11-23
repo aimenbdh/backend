@@ -24,6 +24,6 @@ def create_eureka_client(port: int) -> EurekaClient:
         instance_ip=ip,
         instance_port=port,
         home_page_url=f"{base_url}/swagger-ui",
-        status_page_url=f"{base_url}/api/notifications/hello",
-        health_check_url=f"{base_url}/api/notifications/hello",
+        status_page_url=f"{base_url}/info",
+        health_check_url=f"{base_url}/health",
     )

@@ -15,8 +15,8 @@ function createEurekaClient(port) {
             port: { $: port, '@enabled': 'true' },
             vipAddress: 'meeting',
             homePageUrl: `${baseUrl}/swagger-ui`,
-            statusPageUrl: `${baseUrl}/api/meetings/hello`,
-            healthCheckUrl: `${baseUrl}/api/meetings/hello`,
+            statusPageUrl: `${baseUrl}/info`,
+            healthCheckUrl: `${baseUrl}/health`,
             dataCenterInfo: {
                 '@class': 'com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo',
                 name: 'MyOwn',
